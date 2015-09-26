@@ -1,0 +1,378 @@
+    1  ls
+    2  mkdir ME701
+    3  ls
+    4  cd ME701/
+    5  ls
+    6  cd ..
+    7  ls
+    8  l
+    9  ll
+   10  ll | grep *v
+   11  ll | grep */
+   12  ll | grep */ | wc -l
+   13  ll | grep */ | wc
+   14  ll | grep */ | wc -r
+   15  ll | grep */ | wc -i
+   16  ll | grep */ | wc
+   17  ll
+   18  ll | wc -r
+   19  ll | wc -i
+   20  ll | wc -r
+   21  ll | wc -a
+   22  ll | wc -l
+   23  ll | grep */ | wc -l
+   24  ll | grep */
+   25  ll | grep */|wc -l
+   26  ll | grep -v */ 
+   27  ll | grep -v / 
+   28  ll | grep / 
+   29  ll | grep / | wc -l
+   30  ll | grep -v / | wc -l
+   31  ll | wc -l
+   32  cd ..
+   33  ls
+   34  cd 
+   35  ls
+   36  cd Downloads/
+   37  ls
+   38  mv *sh ../ME701/
+   39  ls
+   40  cd ../ME701/
+   41  ls
+   42  gedit mvfile.sh 
+   43  ls
+   44  git status
+   45  sudo apt-get install git
+   46  ls
+   47  git status
+   48  ls
+   49  git config --global "lilun"
+   50  git config --global user.name "lilun"
+   51  git config --global user.name lilun@ksu.edu
+   52  ls
+   53  ll
+   54  cd ..
+   55  ls
+   56  cd ME701/
+   57  ls
+   58  mkdir hw01
+   59  ls
+   60  cp *sh hw01/
+   61  ls
+   62  cd hw01/
+   63  ls
+   64  git init
+   65  ls
+   66  ls -al
+   67  printf 'readme\n-------\n\nsome text abc.\n' > README.txt
+   68  ls
+   69  vi README.txt 
+   70  git status
+   71  git config --global user.name "lilun19870205"
+   72  git config --global user.name lilun@ksu.edu
+   73  ls
+   74  ll
+   75  git add README.txt 
+   76  git status
+   77  git commit -m "add a readme file."
+   78  git config --global user.email "lilun@ksu.edu"
+   79  git config --global user.name "lilun19870205"
+   80  git commit -m "add a readme file."
+   81  git log
+   82  ll
+   83  cd .git
+   84  l
+   85  cd branches/
+   86  ls
+   87  ll
+   88  cd ..
+   89  ls
+   90  cd hooks/
+   91  ls
+   92  cd ..
+   93  ls
+   94  cd info/
+   95  ls
+   96  cd ..
+   97  ls
+   98  cd logs/
+   99  ls
+  100  cd ..
+  101  ls
+  102  cd objects/
+  103  ls
+  104  cd ..
+  105  ls
+  106  cd ..
+  107  ls
+  108  git add *sh
+  109  git status
+  110  git log
+  111  ls
+  112  git remote add origin https://github.com/lilun19870205/me701-f15-hw01.git
+  113  git remote add https://github.com/lilun19870205/me701-f15-hw01.git
+  114  ls
+  115  git commit -m 'first commit'
+  116  git remote add origin https://github.com/lilun19870205/me701-f15-hw01.git
+  117  git remote -v
+  118  git push origin master
+  119  ls
+  120  ./fahrenheit-to-celsius.sh
+  121  ls
+  122  chmod 777 *
+  123  ls
+  124  git push origin master
+  125  ./fahrenheit-to-celsius.sh
+  126  ls
+  127  gedit fahrenheit-to-celsius.sh
+  128  ls
+  129  git staus
+  130  git status
+  131  git commit -m "kelvin degree is added in"
+  132  ls
+  133  ./fahrenheit-to-celsius.sh
+  134  gedit fahrenheit-to-celsius.sh
+  135  ./fahrenheit-to-celsius.sh
+  136  ls
+  137  git status
+  138  ls
+  139  l
+  140  ll
+  141  cd .git/
+  142  ls
+  143  cd objects/
+  144  ls
+  145  cd pack/
+  146  ls
+  147  cd ..
+  148  ls
+  149  cd ..
+  150  ls
+  151  vi description 
+  152  cd branches/
+  153  ls
+  154  ll
+  155  cd ..
+  156  ls
+  157  vi config 
+  158  cd ..
+  159  ll
+  160  ls
+  161  git checkout master
+  162  git status
+  163  git commit -a "kelvin degree is added in"
+  164  git commit -m "kelvin degree is added in"
+  165  git pull origin master
+  166  git branch
+  167  git checkout -b feature_x
+  168  git branch
+  169  git log
+  170  git add fahrenheit-to-celsius.sh
+  171  git status
+  172  git commit -m "kelvin degree is added in"
+  173  git status
+  174  git push origin master
+  175  git push origin feature_x
+  176  ls
+  177  cd ME701/
+  178  ls
+  179  cd ..
+  180  ls
+  181  cd Downloads/
+  182  ls
+  183  cd ..
+  184  ls
+  185  cd Downloads/
+  186  ls
+  187  chmod 777 *sh
+  188  ls
+  189  ./*sh
+  190  ls
+  191  conda install ipython-notebook
+  192  conda install matplotlib
+  193  conda install numpy
+  194  ls
+  195  spyder
+  196  sudo apt-get install spyder
+  197  conda list
+  198  gedit 
+  199  ls
+  200  grep 'Atomic Number' *txt
+  201  grep 'Atomic Number' *txt > atomic_number.txt
+  202  ls
+  203  vi atomic_number.txt
+  204  grep 'Mass Number' *txt > mass_number.txt
+  205  grep 'Atomic Mass' *txt > atomic_mass.txt
+  206  ls
+  207  gedit *txt
+  208  grep 'Mass Number' *txt
+  209  grep 'Mass Number' atomic_masses.txt > mass_number.txt
+  210  grep 'Atomic Mass' atomic_masses.txt > atomic_mass.txt
+  211  ls
+  212  gedit *txt
+  213  tail *txt
+  214  cd 
+  215  ls
+  216  cd Downloads/
+  217  ls
+  218  gunzip nedit-5.6a-src.tar.gz
+  219  ls
+  220  cd 
+  221  cd ME701/
+  222  ls
+  223  cd hw02/
+  224  ls
+  225  wc -l *txt
+  226  sudo apt-get install nedit
+  227  ls
+  228  ls
+  229  cd ME701/
+  230  ls
+  231  spyder
+  232  ls
+  233  l
+  234  ll
+  235  mv .temp.py temp.py
+  236  ls
+  237  spyder
+  238  conda intall Matplotlib
+  239  conda install Matplotlib
+  240  conda lis
+  241  conda list
+  242  help(matplotlib)
+  243  which matplotlib
+  244  man matplotlib
+  245  which conda matplotlib
+  246  cd 
+  247  cd miniconda/
+  248  ls
+  249  cd pkgs/
+  250  ls
+  251  cd matplotlib-1.4.3-np19py27_2/
+  252  ls
+  253  cd lib/
+  254  ls
+  255  cd python2.7/
+  256  ls
+  257  cd site-packages/
+  258  ls
+  259  cd matplotlib
+  260  ls
+  261  vi pyplot.py
+  262  cd 
+  263  ls
+  264  conda istall ipython
+  265  conda install ipython
+  266  cd ~/miniconda/pkgs/matplotlib-1.4.3-np19py27_2/lib/python2.7/site-packages/matplotlib
+  267  ls
+  268  cd ..
+  269  ls
+  270  cd ..
+  271  ls
+  272  cd ..
+  273  ls
+  274  cd ..
+  275  ls
+  276  cd ..
+  277  ls
+  278  cd 
+  279  ls
+  280  conda update matplotlib
+  281  conda update spyder
+  282  conda update conda
+  283  conda update spyder
+  284  which spyder
+  285  conda install spyder
+  286  spyder
+  287  conda install scipy
+  288  ls
+  289  cd ME701/
+  290  ls
+  291  mkdir hw02
+  292  ls
+  293  cd hw02/
+  294  ls
+  295  spyder
+  296  ls
+  297  spyder
+  298  ls
+  299  cd ..
+  300  ls
+  301  cd hw02/
+  302  ls
+  303  spyder 
+  304  ls
+  305  ipython temp.py 
+  306  ls
+  307  cd ..
+  308  ls
+  309  cd ME701/
+  310  ls
+  311  gedit python-install-check.py
+  312  ls
+  313  spyder
+  314  ls
+  315  nedit *txt
+  316  ls
+  317  cd ME701/
+  318  ls
+  319  cd hw02/
+  320  ls
+  321  gedit *txt
+  322  ls
+  323  spyder &
+  324  ls
+  325  vi atomic_mass3.txt
+  326  ls
+  327  wc -l atomic_mass3.txt atomic_number2.txt mass_number2.txt
+  328  cd ..
+  329  ls
+  330  cd hw01
+  331  ls
+  332  ll
+  333  git branch
+  334  git status
+  335  cd ..
+  336  ls
+  337  git remote add origin https://github.com/lilun19870205/20150923.git
+  338  ls
+  339  mkdir class20150923
+  340  ls
+  341  cd class20150923/
+  342  ls
+  343  git init
+  344  ls
+  345  ll
+  346  ls
+  347  git remote add origin https://github.com/lilun19870205/20150923.git
+  348  git pull origin master
+  349  ls
+  350  ll
+  351  ls
+  352  cd ..
+  353  ls
+  354  cd hw02
+  355  ls
+  356  ls
+  357  awk -F "=" '{print $2}' atomic_mass.txt
+  358  awk -F "=" '{print $2}' atomic_mass.txt > atomic_mass2.txt
+  359  ls
+  360  vi atomic_mass2.txt
+  361  awk -F "(" '{print $1}' atomic_mass2.txt > atomic_mass3.txt
+  362  ls
+  363  vi atomic_mass3.txt
+  364  awk -F "=" '{print $1}' atomic_number.txt > atomic_number2.txt
+  365  ls
+  366  vi atomic_number2.txt
+  367  awk -F "=" '{print $2}' atomic_number.txt > atomic_number2.txt
+  368  ls
+  369  vi atomic_number2.txt
+  370* awk -F "=" '{print $2}' mass_number.txt > mass
+  371  ls
+  372  vi mass_number2.txt
+  373  ls
+  374  cd ME701/
+  375  ls
+  376  cd hw02
+  377  ls
+  378  history > history.lis
