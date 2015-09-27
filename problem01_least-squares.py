@@ -30,3 +30,6 @@ BB_appx=c[0]*x1+c[1]*x2+c[2]*x3+c[3]*x4+c[4]*x5
 #plt.plot(A,BB,'k',A,BB_appx,'r--')
 plt.plot(A,BB_appx,'r--')
 plt.show()
+
+error_avg=np.mean(BB)-np.mean(BB_appx)
+max_error=np.max(abs(BB-BB_appx))
