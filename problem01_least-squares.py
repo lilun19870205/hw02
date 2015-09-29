@@ -33,3 +33,5 @@ plt.show()
 
 error_avg=np.mean(BB)-np.mean(BB_appx)
 max_error=np.max(abs(BB-BB_appx))
+print "error_avg =",error_avg
+print "max_error =",max_error
