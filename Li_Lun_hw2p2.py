@@ -23,8 +23,7 @@ I3_middlepoint=np.linspace(0,0,10)
 I3_simpson=np.linspace(0,0,10)
 I3_gauss=np.linspace(0,0,10)
 
-abs_error_I1_middlepoint=np.linspace(0,0,10)
-
+N=np.linspace(1,10,10)
 
 #for i in xrange(1,11):
 ##    I1_middlepoint[i-1] = 0
@@ -39,18 +38,48 @@ abs_error_I1_middlepoint=np.linspace(0,0,10)
 
 
 for i in xrange(1,11):
-    f=lambda x:x**5
-    I1_quad=sp.integrate.quad(f,-1,1)
-    I1_middlepoint[i-1]=I1_quad[0]
-    I1_x=np.linspace(-1,1,i)
+    I1_x=np.linspace(-1,1,i+1)
     I1_y=I1_x**5
+    I1_middlepoint[i-1]=np.trapz(I1_y,I1_x)
     I1_simpson[i-1]=sp.integrate.simps(I1_y,I1_x)
     a=np.polynomial.legendre.leggauss(i)
-    xi=-1+(2/2)*(1+a[0])
-    for j in xrange(0,i):
-        I1_gauss[i-1]=I1_gauss[i-1]+(xi[j]**5)*a[1][j]
+    xi=1*a[0]+0
+    I1_gauss[i-1]=np.sum((xi**5*a[1])*1)
     
 I1_middlepoint_error=I1_middlepoint-0.
 I1_simpson_error=I1_simpson - 0.
 I1_gauss_error=I1_gauss-0.
+
+
+for i in xrange(1,11):
+    I2_x=np.linspace(-5,5,i+1)
+    I2_y=1/(I2_x**2+1)
+    I2_middlepoint[i-1]=np.trapz(I2_y,I2_x)
+    print np.trapz(I2_y,I2_x)
+    I2_simpson[i-1]=sp.integrate.simps(I2_y,I2_x)
+    a=np.polynomial.legendre.leggauss(i)
+    xi=5*a[0]+0
+    I2_gauss[i-1]=np.sum((1/(xi**2+1)*a[1])*5)
+
+    
+I2_middlepoint_error=I2_middlepoint-2.7468
+I2_simpson_error=I2_simpson - 2.7468
+I2_gauss_error=I2_gauss-2.7468
+
+
+for i in xrange(1,11):
+    I3_x=np.linspace(0,np.pi,i+1)
+    I3_y=I3_x*np.sin(I3_x)/(1+(np.cos(I3_x))**2)
+    I3_middlepoint[i-1]=np.trapz(I3_y,I3_x)
+    I3_simpson[i-1]=sp.integrate.simps(I3_y,I3_x)
+    a=np.polynomial.legendre.leggauss(i)
+    xi=(np.pi/2)*a[0]+np.pi/2
+    I3_gauss[i-1]=np.sum(((xi*np.sin(xi)/(1+(np.cos(xi))**2))*a[1])*(np.pi/2))
+
+    
+I3_middlepoint_error=I3_middlepoint-(np.pi)**2/4
+I3_simpson_error=I3_simpson - (np.pi)**2/4
+I3_gauss_error=I3_gauss-(np.pi)**2/4
+
+
 
