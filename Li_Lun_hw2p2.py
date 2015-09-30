@@ -55,7 +55,6 @@ for i in xrange(1,11):
     I2_x=np.linspace(-5,5,i+1)
     I2_y=1/(I2_x**2+1)
     I2_middlepoint[i-1]=np.trapz(I2_y,I2_x)
-    print np.trapz(I2_y,I2_x)
     I2_simpson[i-1]=sp.integrate.simps(I2_y,I2_x)
     a=np.polynomial.legendre.leggauss(i)
     xi=5*a[0]+0
@@ -65,6 +64,11 @@ for i in xrange(1,11):
 I2_middlepoint_error=I2_middlepoint-2.7468
 I2_simpson_error=I2_simpson - 2.7468
 I2_gauss_error=I2_gauss-2.7468
+plt.plot(N,np.log10(abs(I2_middlepoint_error)),label="I2_middlepoint")
+plt.plot(N,np.log10(abs(I2_simpson_error)),label="I2_simpson")
+plt.plot(N,np.log10(abs(I2_gauss_error)),label="I2_gauss")
+plt.legend(bbox_to_anchor=(1.05,1),loc=2,borderaxespad=0.)
+plt.show()
 
 
 for i in xrange(1,11):
@@ -80,6 +84,11 @@ for i in xrange(1,11):
 I3_middlepoint_error=I3_middlepoint-(np.pi)**2/4
 I3_simpson_error=I3_simpson - (np.pi)**2/4
 I3_gauss_error=I3_gauss-(np.pi)**2/4
+plt.plot(N,np.log10(abs(I3_middlepoint_error)),label="I3_middlepoint")
+plt.plot(N,np.log10(abs(I3_simpson_error)),label="I3_simpson")
+plt.plot(N,np.log10(abs(I3_gauss_error)),label="I3_gauss")
+plt.legend(bbox_to_anchor=(1.05,1),loc=2,borderaxespad=0.)
+plt.show()
 
 
 
