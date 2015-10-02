@@ -39,8 +39,12 @@ N=np.linspace(1,10,10)
 
 for i in xrange(1,11):
     I1_x=np.linspace(-1,1,i+1)
+    I1_xx=np.linspace(0,0,i)
+    for j in xrange(0,i):
+        I1_xx[j]=(I1_x[j]+I1_x[j+1])/2
     I1_y=I1_x**5
-    I1_middlepoint[i-1]=np.trapz(I1_y,I1_x)
+    I1_yy=I1_xx**5
+    I1_middlepoint[i-1]=np.trapz(I1_yy,I1_xx)
     I1_simpson[i-1]=sp.integrate.simps(I1_y,I1_x)
     a=np.polynomial.legendre.leggauss(i)
     xi=1*a[0]+0
@@ -53,8 +57,12 @@ I1_gauss_error=I1_gauss-0.
 
 for i in xrange(1,11):
     I2_x=np.linspace(-5,5,i+1)
+    I2_xx=np.linspace(0,0,i)
+    for j in xrange(0,i):
+        I2_xx[j]=(I2_x[j]+I2_x[j+1])/2
     I2_y=1/(I2_x**2+1)
-    I2_middlepoint[i-1]=np.trapz(I2_y,I2_x)
+    I2_yy=1/(I2_xx**2+1)
+    I2_middlepoint[i-1]=np.trapz(I2_yy,I2_xx)
     I2_simpson[i-1]=sp.integrate.simps(I2_y,I2_x)
     a=np.polynomial.legendre.leggauss(i)
     xi=5*a[0]+0
@@ -73,8 +81,12 @@ plt.show()
 
 for i in xrange(1,11):
     I3_x=np.linspace(0,np.pi,i+1)
+    I3_xx=np.linspace(0,0,i)
+    for j in xrange(0,i):
+        I3_xx[j]=(I3_x[j]+I3_x[j+1])/2
     I3_y=I3_x*np.sin(I3_x)/(1+(np.cos(I3_x))**2)
-    I3_middlepoint[i-1]=np.trapz(I3_y,I3_x)
+    I3_yy=I3_xx*np.sin(I3_xx)/(1+(np.cos(I3_xx))**2)
+    I3_middlepoint[i-1]=np.trapz(I3_yy,I3_xx)
     I3_simpson[i-1]=sp.integrate.simps(I3_y,I3_x)
     a=np.polynomial.legendre.leggauss(i)
     xi=(np.pi/2)*a[0]+np.pi/2
