@@ -10,23 +10,23 @@ import scipy.optimize
 import matplotlib.pyplot as plt
 
 n=10
-x=sp.linspace(0, sp.pi/2,n)
+x=sp.linspace(0, sp.pi,n)
 y=sp.sin(x)
 
 def reconstruct(c):
     y_appx=0*x
     for i in range(len(c)):
         y_appx+=c[i]*x**i
-        return y_appx
+    return y_appx
 
 def objective(c):
     y_appx=reconstruct(c)
     e=y_appx-y
     return sp.linalg.norm(e,sp.inf)
 
-c0=[0,1.0/1.6]
+c0=[1,1,1,1]
 sol=sp.optimize.minimize(objective,c0)
 c=sol.x
 y_appx=reconstruct(c)
 
-plt.plot(x,y, 'k-',x,y_appx,'r--')bi
+plt.plot(x,y, 'k-',x,y_appx,'r--')
