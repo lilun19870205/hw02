@@ -39,14 +39,14 @@ N=np.linspace(1,10,10)
 
 for i in xrange(1,11):
     I1_x=np.linspace(-1,1,i+1)
-    I1_xx=np.linspace(0,0,i)
+    I1_xx=np.linspace(0,0,i)                #get the middle point in a delta
     for j in xrange(0,i):
         I1_xx[j]=(I1_x[j]+I1_x[j+1])/2
     I1_y=I1_x**5
-    I1_yy=I1_xx**5
+    I1_yy=I1_xx**5                        #get the y value of the middle point
     I1_middlepoint[i-1]=np.trapz(I1_yy,I1_xx)
     I1_simpson[i-1]=sp.integrate.simps(I1_y,I1_x)
-    a=np.polynomial.legendre.leggauss(i)
+    a=np.polynomial.legendre.leggauss(i)           #get the gauss coefficient
     xi=1*a[0]+0
     I1_gauss[i-1]=np.sum((xi**5*a[1])*1)
     

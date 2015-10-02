@@ -4,6 +4,8 @@ Created on Wed Sep 30 10:18:14 2015
 
 @author: lilun
 """
+#Algorithm is found from the Internet
+
 import time
 
 

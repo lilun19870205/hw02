@@ -54,9 +54,10 @@ def binary_to_decimal(i,f):
     return integer_part+float_part
         
 
+print "please input the float number"
 number=input()
+print "please input the precision of the float part"
 precision=input()
-#integer_part,float_part=decimal_to_binary(number,precision)
 result=decimal_to_binary(number,precision)
 print "the binary type of number",number,"is:",result[0],".",result[1]
 
